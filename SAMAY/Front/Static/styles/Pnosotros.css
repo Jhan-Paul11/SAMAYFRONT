@@ -1,0 +1,306 @@
+body {
+    font-family: 'Poppins', Helvetica, Arial, sans-serif;
+    background-image: url(https://themes.muffingroup.com/be/farm2/wp-content/uploads/2020/12/farm2-bg.png);
+    background-repeat: repeat;
+    background-position: center top;
+    margin: 0;
+    padding: 0;
+}
+.hero-section {
+    background-color: #2E473B;
+    color: white;
+    padding: 90px 50px 30px;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+}
+
+.hero-image {
+    width: 40%;
+    height: auto;
+}
+
+.hero-text {
+    width: 60%;
+    padding-right: 20px;
+}
+
+.hero-text h1 {
+    font-size: 48px;
+    margin: 0 0 20px 0;
+    font-family: 'Volkhov', Helvetica, Arial, sans-serif;
+}
+
+.hero-text p {
+    font-size: 24px;
+    margin: 0 0 40px 0;
+}
+
+.team-section {
+    text-align: center;
+    position: relative;
+    top: 100px;
+}
+
+.team-section h2 {
+    font-family: 'Reenie Beanie', cursive;
+    font-size: 56px;
+    margin-bottom: 40px;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: white;
+    color: black;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 200px;
+}
+
+.card-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.card h3 {
+    font-family: 'Volkhov', Helvetica, Arial, sans-serif;
+    margin: 10px 0 5px 0;
+}
+
+.card p {
+    font-size: 16px;
+    margin: 0;
+}
+
+.cta-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 10px;
+    margin: 50px 100px;
+    background-color: #f4f4f4;
+    position: relative;
+    top: 100px;
+}
+
+.cta-content {
+    display: flex;
+    align-items: center;
+    width: 80%;
+    max-width: 1200px;
+}
+
+.cta-text {
+    width: 70%;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    padding-right: 20px;
+}
+
+.cta-button {
+    width: 30%;
+    padding: 15px;
+    background-color: #74A563;
+    color: white;
+    font-family: 'Helvetica', sans-serif;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none; 
+}
+
+.cta-button:hover {
+    background-color: #84bb72;
+}
+
+.vision-section {
+    display: flex;
+    justify-content: center;
+    padding: 50px 0px 20px;
+}
+
+.vision-content {
+    margin: 50px;
+    width: 80%;
+    max-width: 1200px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.vision-image {
+    width: 100%;
+    height: 400px;
+    display: block;
+}
+
+.vision-text {
+    padding: 20px;
+    font-size: 18px;
+    text-align: justify;
+    line-height: 1.6;
+    position: relative;
+}
+
+.vision-text .E {
+    color: #f4f7f3;
+    font-size: 48px;
+    background-color: #74A563;
+    margin: 0 10px 5px 0;
+    padding: 10px;
+    float: left;
+    line-height: 1;
+    border-radius: 5px;
+}
+
+.ods-section {
+    padding: 0px 20px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.ods-title {
+    font-size: 28px;
+    color: #013220;
+    margin-bottom: 70px;
+    font-family: 'Volkhov', Helvetica, Arial, sans-serif;
+}
+
+.ods-content {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.ods-item {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+}
+
+.ods-icon {
+    font-size: 48px;
+    color: #74A563;
+    margin-bottom: 20px;
+}
+
+.ods-item h3 {
+    font-family: 'Volkhov', Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    color: #013220;
+    margin-bottom: 10px;
+}
+
+.ods-item p {
+    font-size: 16px;
+    color: #555555;
+}
+
+@media (max-width: 1024px) {
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-image {
+        width: 80%;
+        margin: 20px 0;
+    }
+
+    .hero-text {
+        width: 100%;
+        padding-right: 0;
+    }
+
+    .cta-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .cta-text, .cta-button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-text h1 {
+        font-size: 36px;
+    }
+
+    .hero-text p {
+        font-size: 20px;
+    }
+
+    .team-section h2 {
+        font-size: 48px;
+    }
+
+    .ods-title {
+        font-size: 24px;
+    }
+
+    .ods-item {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-text h1 {
+        font-size: 28px;
+    }
+
+    .hero-text p {
+        font-size: 16px;
+    }
+
+    .team-section h2 {
+        font-size: 36px;
+    }
+
+    .cta-section {
+        margin: 20px 0;
+    }
+
+    .cta-content {
+        padding: 20px;
+    }
+
+    .vision-image {
+        height: 200px;
+    }
+
+    .vision-text {
+        font-size: 16px;
+    }
+
+    .ods-title {
+        font-size: 20px;
+    }
+
+    .ods-icon {
+        font-size: 36px;
+    }
+
+    .ods-item p {
+        font-size: 14px;
+    }
+}
