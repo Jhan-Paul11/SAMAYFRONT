@@ -11,7 +11,7 @@ header.innerHTML = `
                     <button id="icono-busqueda" class="icono"><i class="fa-solid fa-magnifying-glass fa-lg" style="color: #000000;"></i></button>
                 </div>
                 <div class="logo">
-                    <a href="#" id="logo1">SAMAY</a>
+                    <a href="Pinicio.html" id="logo1">SAMAY</a>
                 </div>
                 <div id="acciones-usuario">
                     <button id="icono-carrito" class="icono"><i class="fa-solid fa-cart-shopping fa-lg  tamano" id="carritoCom" style="color: #030303;"></i></i></button>
@@ -27,11 +27,11 @@ header.innerHTML = `
             </div>
             <nav id="barra-navegacion">
                 <ul id="menu">
-                    <li><a href="#" class="enlace-menu">Inicio</a></li>
-                    <li><a href="#" class="enlace-menu">Nosotros</a></li>
-                    <li><a href="#" class="enlace-menu">Productos</a></li>
-                    <li><a href="#" class="enlace-menu">Contacto</a></li>
-                    <li><a href="#" class="enlace-menu">Blog</a></li>
+                    <li><a href="Pinicio.html" class="enlace-menu">Inicio</a></li>
+                    <li><a href="Pnosotros.html" class="enlace-menu">Nosotros</a></li>
+                    <li><a href="Pproductos.html" class="enlace-menu">Productos</a></li>
+                    <li><a href="contacto.html" class="enlace-menu">Contacto</a></li>
+                    <li><a href="blog.html" class="enlace-menu">Blog</a></li>
                 </ul>
             </nav>
         </div>
@@ -53,9 +53,8 @@ footer.innerHTML = `
                         <div id="parte1">
                             <h2>Aprende Mas</h2>
                             <ul>
-                                <li><a href="#">Acerca de Nosotros</a></li>
+                                <li><a href="Pnosotros.html">Acerca de Nosotros</a></li>
                                 <li><a href="#">FAQ</a></li>
-                                <li><a href="#">NYTimes.com/food</a></li>
                             </ul>
                         </div>
                             <div id="parte2">
