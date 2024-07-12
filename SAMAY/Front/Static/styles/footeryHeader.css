@@ -1,0 +1,361 @@
+@import url('https://fonts.googleapis.com/css2?family=Amethysta&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amethysta&family=Madimi+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family:  nyt-franklin, Arial, Helvetica, sans-serif;
+}
+
+.tamano_contenido_nav{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#encabezado {
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+}
+
+#barra-busqueda {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+.icono {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin: 0 10px;
+    outline: none;  /* Quitar outline */
+}
+
+#menu-icono, #acciones-usuario {
+    display: flex;
+    align-items: center;
+}
+
+#icono-menu, #icono-busqueda, #icono-usuario {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin: 0 10px;
+}
+
+.logo a {
+    text-decoration: none;
+    color: #000;
+    /* border: orange 2px so */
+}
+
+ #logo1 {
+    /* border: orange 2px solid; */
+    width: 110px;
+    height: 50px;
+    padding-left: 5px;
+    font-family: 'Madimi One', sans-serif;
+    color: #000000;
+    text-decoration: none;
+    padding-top: 7px;
+    font-size: 30px;
+}
+
+#campo-busqueda-container {
+    display: none;
+    padding: 10px 20px;
+}
+
+#campo-busqueda {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#barra-navegacion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+#registrarseNav{
+    display: none;
+}
+#ingresarNav{
+    display: none;
+}
+
+#menu {
+    display: flex;
+    list-style: none;
+}
+
+#menu li {
+    margin: 0 10px;
+}
+button .icono .tamano #carritoCom{
+    background-color: #c20000;
+    border: none;
+}
+.enlace-menu {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+.enlace-menu:hover{
+    border-bottom: green 2px solid;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    #barra-busqueda {
+        justify-content: space-between;
+        padding: 10px;
+    }
+   
+    #campo-busqueda-container {
+        display: none;
+        width: 100%;
+    }
+  
+
+    #barra-navegacion {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #menu {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    #menu li {
+        margin: 5px 0;
+    }
+}
+@media (min-width: 1200px) {
+
+    #icono-usuario{
+        display: none;
+    }
+    #registrarseNav {
+        display: inline-block;
+        background-color: #ffffff; /* Fondo blanco */
+        color: #000000; /* Texto negro */
+        border: 1px solid #000000; /* Borde negro */
+        border-radius: 25px; /* Bordes redondeados */
+        padding: 5px 10px; /* Padding alrededor del texto */
+        font-size: 13px; /* Tamaño de fuente */
+        font-weight:500; /* Negrita */
+        cursor: pointer; /* Cambia el cursor a una mano al pasar sobre el botón */
+        transition: background-color 0.3s, color 0.3s, box-shadow 0.3s; /* Transiciones suaves */
+        outline: none; /* Quita el borde de enfoque */
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); /* Sombra ligera */
+    }
+    
+    /* Efectos al pasar el cursor sobre el botón */
+    #registrarseNav:hover {
+        background-color: #f0f0f0; /* Fondo ligeramente gris al pasar el cursor */
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
+    }
+    
+    /* Efectos al hacer clic en el botón */
+    #registrarseNav:active {
+        background-color: #e0e0e0; /* Fondo más oscuro al hacer clic */
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2); /* Sombra ligera */
+    }
+    
+    /* Estilos para mantener el borde de enfoque sin afectar la apariencia */
+    #registrarseNav:focus-visible {
+        outline: 2px solid #000000;
+        outline-offset: 2px;
+    }
+
+    #ingresarNav {
+        display: inline-block;
+        background-color: white;
+        color: black;
+        border: 1px solid black;
+        border-radius: 50px;
+        font-weight: 500;
+        padding: 5px 10px;
+        cursor: pointer;
+        font-size: 13px;
+        margin: 5px;
+        transition: background-color 0.3s, color 0.3s, box-shadow 0.3s; /* Transiciones suaves */
+        outline: none; /* Quita el borde de enfoque */
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); /* Sombra ligera */
+    
+    }
+     #ingresarNav:hover {
+        background-color: black;
+        color: white;
+    }
+
+
+}
+
+/* footer*/
+#pie-de-pagina {
+    background-color: #000;
+    color: #fff;
+    padding: 40px 5px;
+}
+.hipervinculos{
+    display: flex;
+    flex-wrap: wrap;
+    min-width: 300px;
+    margin-left: 10em;
+}
+.contenido{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+#contenido-pie {
+    display:flex;
+    margin: 0 ;
+}
+
+.columna1 #diferente{
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 2px solid gray;
+}
+.parte2 li a{
+    margin-bottom: 10px;
+}
+.columna {
+    flex: 1;
+    min-width: 100px;
+    margin:0  20px;
+}
+
+.columna1 {
+    flex: 1;
+    width: 50px;
+}
+
+
+.columna h2, .columna1 h2 {
+    font-size: 16px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.columna p, .columna ul, .columna1 ul {
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.columna ul, .columna1 ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.columna ul li, .columna1 ul li {
+    margin-bottom: 10px;
+}
+.columna p a{
+    color: #fff;
+    text-decoration: none;
+}
+.columna #acerca-de ul li a, .columna1 ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.columna ul li a:hover, .columna1 ul li a:hover {
+    text-decoration: underline;
+}
+
+.columna1 #parte2{
+    margin-top: 30px;
+}
+
+
+#legal {
+    text-align: left;
+    font-size: 12px;
+    margin:0 20px;
+}
+
+#legal a {
+    color: #fff;
+    text-decoration: none;
+}
+
+#legal a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 1200px) {
+    #contenido-pie {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .columna, .columna1 {
+        max-width: 100%;
+        text-align: center;
+        margin: 20px 0;
+    }
+
+    #legal {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 992px) {
+    #contenido-pie {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .columna, .columna1 {
+        max-width: 100%;
+        text-align: center;
+        margin: 20px 0;
+    }
+
+    #legal {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    #contenido-pie {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .columna, .columna1 {
+        max-width: 100%;
+        text-align: center;
+        margin: 20px 0;
+    }
+
+    #legal {
+        font-size: 10px;
+    }
+}
+@media (max-width: 478px) {
+
+.hipervinculos{
+    flex-direction: column;
+}
+.columna{
+    min-width: 100%;
+}
+.columna1{
+    margin: 0 ;
+   text-align: left;
+    min-width: 100%;
+}
+
+}
