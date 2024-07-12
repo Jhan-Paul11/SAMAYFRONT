@@ -8,7 +8,7 @@ body {
 }
 
 .hero-section{
-    background-image: url("/SAMAY/Front/Images/siembra.jpg");
+    background-image: url("../../Images/siembra.jpg");
     background-size: cover; 
     background-position: center;
     filter: brightness(0.8); 
@@ -28,7 +28,7 @@ body {
     display: flex;
     justify-content: space-around;
     margin-right: 100px;;
-    top: 200px;
+    top: 170px;
     position: relative;
     margin-left: 150px;
     text-align: center;
@@ -67,7 +67,7 @@ body {
 .benefits-section {
     text-align: center;
     padding: 50px 20px;
-    top: 200px;
+    top: 170px;
     position: relative;
 
 }
@@ -82,7 +82,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
+    gap: 50px;
 }
 
 .benefit {
@@ -117,7 +117,7 @@ body {
 .carousel-section {
     text-align: center;
     padding: 50px 20px;
-    top: 200px;
+    top: 130px;
     position: relative;
 }
 
@@ -184,8 +184,9 @@ body {
     justify-content: center;
     align-items: center;
     padding: 30px 100px;
-    top: 200px;
+    top: 50px;
     position: relative;
+    margin-bottom: 40px;
 }
 
 .story-content {
@@ -311,7 +312,7 @@ body {
 
 
 @media (max-width: 480px) {
-
+    
     .hero-content h1 {
         font-size: 20px;
     }
@@ -365,3 +366,5 @@ body {
     }
 
 }
+
+

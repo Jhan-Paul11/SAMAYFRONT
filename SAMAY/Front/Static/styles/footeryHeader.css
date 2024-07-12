@@ -7,9 +7,10 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: nyt-franklin, Arial, Helvetica, sans-serif;
+#encabezado, #pide-de-pagina {
+  font-family: nyt-franklin, Arial, Helvetica, sans-serif !important; 
 }
+
 
 .tamano_contenido_nav {
   max-width: 1200px;
@@ -27,7 +28,7 @@ body {
   align-items: center;
   padding: 10px 20px;
 }
-.icono {
+.iconohf {
   background: none;
   border: none;
   cursor: pointer;
@@ -47,7 +48,7 @@ body {
   background: none;
   border: none;
   cursor: pointer;
-  margin: 0 10px;
+  /*margin: 0 10px;*/
 }
 
 .logo a {

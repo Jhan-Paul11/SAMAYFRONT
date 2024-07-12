@@ -6,7 +6,7 @@ body {
 }
 
 .hero {
-  background-image: url('/SAMAY/Front/Images/campo_producto.jpg');
+  background-image: url('../../Images/campo_producto.jpg');
   background-size: cover;
   background-position: center;
   height: 200px;
@@ -38,7 +38,7 @@ body {
   min-width: 250px;
 }
 
-.valor .icono {
+.valor .picn {
   font-size: 70px;
   margin-bottom: 30px;
   color: white;
