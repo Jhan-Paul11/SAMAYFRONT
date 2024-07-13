@@ -2,28 +2,27 @@ const header = document.querySelector('header');
 const footer = document.querySelector('footer');
 
 header.innerHTML = `
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
    <div id="encabezado">
         <div class="tamano_contenido_nav">
             <div id="barra-busqueda">
                 <div id="menu-icono">
-                    <button id="icono-menu" class="iconohf"><i class="fa-solid fa-bars fa-lg" style="color: #0d0d0d;"></i></i></button>
-                    <button id="icono-busqueda" class="iconohf"><i class="fa-solid fa-magnifying-glass fa-lg" style="color: #000000;"></i></button>
+                    <button id="icono-menu" class="icono"><i class="fa-solid fa-bars fa-lg" style="color: #0d0d0d;"></i></i></button>
+                    <button id="icono-busqueda" class="icono"><i class="fa-solid fa-magnifying-glass fa-lg" style="color: #000000;"></i></button>
                 </div>
                 <div class="logo">
                     <a href="../html/Pinicio.html" id="logo1">SAMAY</a>
                 </div>
                 <div id="acciones-usuario">
-                    <button id="icono-carrito" class="iconohf"><i class="fa-solid fa-cart-shopping fa-lg  tamano" id="carritoCom" style="color: #030303;"></i></button>
-                    <button id="icono-usuario" class="iconohf"><i class="fa-solid fa-user fa-lg" style="color: #030303;"></i></button>
-                    <button id="registrarseNav">Registrarse</button>
-                    <button id="ingresarNav">Ingresar</button>
+                    <button id="icono-carrito" class="icono"><i class="fa-solid fa-cart-shopping fa-lg  tamano" id="carritoCom" style="color: #030303;"></i></i></button>
+                    <button id="icono-usuario" class="icono"><i class="fa-solid fa-user fa-lg" style="color: #030303;"></i></button>
+                    <a id="registrarseNav" href="../html/registro.html" target="_blank" class="button-link">Registrarse</a>
+                    <a id="ingresarNav" href="../html/registro.html" target="_blank" class="button-link">Ingresar</a>
                 </div>
             </div>
             <div id="campo-busqueda-container">
                 <input type="text" id="campo-busqueda" placeholder="¿Qué te gustaría comprar?">
-                <button></button>
-                <button></button>
             </div>
             <nav id="barra-navegacion">
                 <ul id="menu">
@@ -78,9 +77,34 @@ footer.innerHTML = `
           
         </div>
         <div id="legal">
-            <p>&copy; 2024 Samay Company | <a href="#">Terms of Service</a> | <a href="#">Privacy Policy</a></p>
+            <p>&copy; 2024 Samay Company | <a href="#">Privacy Policy</a> | <a href="#">Uso académico</a> </p>
         </div>
 
        </div>
     </div>
 `;
+document.addEventListener('DOMContentLoaded', () => {
+  const burgerMenu = document.getElementById('menuHamburger');
+  const list = document.getElementById('menuList');
+  const menuItems = document.querySelectorAll('.menuItem');
+  const cerrarButton = document.getElementById('cerrarButton');
+
+  function toggleMenu() {
+    list.classList.toggle('show');
+    list.classList.toggle('close');
+  }
+
+  burgerMenu.addEventListener('click', toggleMenu);
+
+  menuItems.forEach((item) => {
+    item.addEventListener('click', function () {
+      list.classList.add('close');
+      list.classList.remove('show');
+    });
+  });
+
+  cerrarButton.addEventListener('click', function () {
+    list.classList.add('close');
+    list.classList.remove('show');
+  });
+});
