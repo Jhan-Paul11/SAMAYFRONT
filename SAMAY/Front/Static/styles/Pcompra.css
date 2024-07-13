@@ -1,0 +1,217 @@
+body {
+    font-family: 'Poppins', Helvetica, Arial, sans-serif;
+    background-image: url(https://themes.muffingroup.com/be/farm2/wp-content/uploads/2020/12/farm2-bg.png);
+    background-repeat: repeat;
+    background-position: center top;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+    gap: 20px;
+    min-height: 100vh;
+    margin: 0 auto; 
+    max-width: 1200px; 
+}
+
+.form-container, .cart-container {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    width: 100%;
+    max-width: 500px;
+    box-sizing: border-box; 
+}
+
+.container h2 {
+    color: #2E473B; 
+    font-family: "Volkhov", Helvetica, Arial, sans-serif;
+    margin-bottom: 30px;
+}
+
+.divider {
+    border: 1px solid #74A563; 
+    margin: 20px 0;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.form-group label {
+    display: block;
+    width: 100%; 
+}
+
+.form-group input, .form-group select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    flex: 1 1 calc(50% - 10px);
+}
+
+.form-group input:focus, .form-group select:focus {
+    border-color: #2E473B; 
+    border-width: 2px;
+    outline: none; 
+}
+
+.carrito-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-bottom: 1px solid green;
+}
+
+.nombre {
+    flex: 2;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.cantidad {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    justify-content: center;
+}
+
+.cantidad button {
+    background-color: rgb(249, 252, 249);
+    color: #74A563;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 24px;
+    margin: 0 5px;
+}
+
+.cantidad button:disabled {
+    background-color: grey;
+    cursor: not-allowed;
+}
+
+.precio-total {
+    flex: 1;
+    text-align: right;
+    font-size: 16px;
+}
+
+#carritoItems {
+    margin: 20px 0;
+}
+
+#precioTotal {
+    font-size: 18px;
+    text-align: right;
+}
+
+.total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2em;
+}
+
+.submit-btn {
+    background-color: #74A563;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+}
+
+.submit-btn a {
+    color: white;
+    text-decoration: none;
+}
+
+.submit-btn:hover {
+    background-color: #84bb72;
+}
+
+
+@media (max-width: 1270px) {
+    .container {
+        padding: 10px;
+        gap: 15px;
+    }
+}
+
+
+@media (max-width: 770px) {
+    .container {
+        padding: 10px;
+        gap: 10px;
+    }
+}
+
+
+@media (max-width: 760px) {
+    .container {
+        flex-direction: column; 
+        align-items: center;
+        padding: 10px;
+    }
+
+    .cart-container, .form-container {
+        max-width: 100%;
+        padding: 10px;
+        margin-bottom: 20px; 
+    }
+}
+
+
+@media (max-width: 617px) {
+    .container {
+        flex-direction: column; 
+        align-items: center;
+        padding: 10px;
+    }
+
+    .cart-container, .form-container {
+        max-width: 100%;
+        padding: 10px;
+        margin-bottom: 20px; 
+    }
+}
+
+
+@media (max-width: 480px) {
+    .container {
+        flex-direction: column; 
+        align-items: center;
+        padding: 10px;
+    }
+
+    .cart-container, .form-container {
+        max-width: 100%;
+        padding: 10px;
+        margin-bottom: 20px; 
+    }
+}
+
+
+@media (max-width: 320px) {
+    .container {
+        flex-direction: column; 
+        align-items: center;
+        padding: 5px;
+    }
+
+    .cart-container, .form-container {
+        max-width: 100%;
+        padding: 5px;
+        margin-bottom: 20px; 
+    }
+}
+

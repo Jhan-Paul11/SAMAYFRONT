@@ -1,0 +1,370 @@
+body {
+    font-family: 'Poppins', Helvetica, Arial, sans-serif;
+    background-image: url(https://themes.muffingroup.com/be/farm2/wp-content/uploads/2020/12/farm2-bg.png);
+    background-repeat: repeat;
+    background-position: center top;
+    margin: 0;
+    padding: 0;
+}
+
+.hero-section{
+    background-image: url("../../Images/siembra.jpg");
+    background-size: cover; 
+    background-position: center;
+    filter: brightness(0.8); 
+}
+
+.hero-content h1 {
+    font-family: "Volkhov", Helvetica, Arial, sans-serif;
+    text-align: center;
+    margin-top: 0px;
+    padding: 70px 270px 0px;
+    color: #f7fafa; 
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.cards {
+    display: flex;
+    justify-content: space-around;
+    margin-right: 100px;;
+    top: 170px;
+    position: relative;
+    margin-left: 150px;
+    text-align: center;
+    align-self: center;
+}
+
+.card {
+    background-color: #2E473B;
+    padding: 20px;
+    width: 25%;
+    position: relative;
+    color: #fff;
+    align-items: center;
+}
+
+.card h2 {
+    font-family: 'Volkhov', Helvetica, Arial, sans-serif;
+    margin-bottom: 10px;
+    align-self: center;
+}
+
+.card-img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    margin: 10px auto;
+    align-self: center;
+}
+
+
+.card p {
+    font-size: 1em;
+    align-self: center;
+}
+
+.benefits-section {
+    text-align: center;
+    padding: 50px 20px;
+    top: 170px;
+    position: relative;
+
+}
+
+.benefits-section h2 {
+    font-family: 'Volkhov', Helvetica, Arial, sans-serif;
+    font-size: 2em;
+    margin-bottom: 30px;
+}
+
+.benefits {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+}
+
+.benefit {
+    background-color: #fff;
+    color: #333;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    text-align: left;
+}
+
+.benefit i {
+    font-size: 2em;
+    margin-right: 15px;
+    color: #32CD32; 
+}
+
+.benefit h3 {
+    font-family: 'Volkhov', Helvetica, Arial, sans-serif;
+    font-size: 1.2em;
+    margin: 0 0 10px 0;
+}
+
+.benefit p {
+    font-size: 1em;
+    margin: 0;
+}
+
+
+.carousel-section {
+    text-align: center;
+    padding: 50px 20px;
+    top: 130px;
+    position: relative;
+}
+
+.carousel {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.carousel-text {
+    margin-bottom: 20px;
+}
+
+.carousel-text h2 {
+    font-family: 'Volkhov', Helvetica, Arial, sans-serif;
+    font-size: 1.8em;
+}
+
+.carousel-text p {
+    font-size: 1em;
+    margin: 10px 0;
+}
+
+.carousel-images {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: auto;
+}
+
+.carousel-image {
+    display: none;
+    width: 100%;
+}
+
+.carousel-image.active {
+    display: block;
+}
+
+.carousel-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.carousel-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.carousel-controls .prev, .carousel-controls .next {
+    cursor: pointer;
+    font-size: 2em;
+    color: #32CD32; 
+    user-select: none;
+}
+
+.story-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 100px;
+    top: 50px;
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.story-content {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    width: 100%; 
+    height: auto;
+    padding: 25px;
+}
+
+.story-text {
+    flex: 1;
+    padding: 20px;
+    background-color: #2E473B;
+    text-align: center;
+    width: 65%;
+    color: #f2f1f0;
+}
+
+.story-text h2 {
+    font-family: 'Volkhov', Helvetica, Arial, sans-serif;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.story-text p {
+    font-size: 1em;
+    margin-bottom: 20px;
+}
+
+.story-image {
+    flex: 1;
+    text-align: center;
+}
+
+.story-image img {
+    border-radius: 10px; 
+    width: 100%;
+    height: 440px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #74A563;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 1em;
+    transition: background-color 0.3s;
+    margin-bottom: 15px;
+}
+
+.btn:hover {
+    background-color: #84bb72;
+}
+  
+
+
+@media (max-width: 768px) {
+
+    .hero-section {
+        background-size: contain; 
+        background-position: top center; 
+        background-repeat: no-repeat;
+    }
+
+    .hero-content h1 {
+        padding: 80px 20px 0px; 
+    }
+
+    .cards {
+        flex-wrap: wrap; 
+        width: 90%; 
+        margin-left: auto;
+        margin-right: auto;
+        top: 60px;
+    }
+
+    .card {
+        width: 100%; 
+        margin-bottom: 20px;
+    }
+    .benefits-section {
+        padding: 20px;
+        top: 60px;    
+    }
+
+    .carousel-section {
+        top: 60px; 
+        padding: 30px;
+    }
+
+    .story-content {
+        display: flex;
+        flex-direction: column; 
+        text-align: center; 
+    }
+
+    .story-section {
+        padding: 0px;
+        width: 100%; 
+        height: auto;
+        top: 60px;
+    }
+
+    .story-text {
+        padding: 20px; 
+    }
+
+    .story-image {
+        order: -1;
+        margin: 0px; 
+    }
+
+    .story-image img {
+        width: 100%; 
+        height: auto; 
+    }
+
+ 
+}
+
+
+@media (max-width: 480px) {
+    
+    .hero-content h1 {
+        font-size: 20px;
+    }
+
+    .hero-section {
+        background-size: contain; 
+        background-position: top center; 
+        background-repeat: no-repeat;
+    }
+
+    .hero-content h1 {
+        padding: 60px 10px 0px; 
+    }
+
+    .cards {
+        width: 100%; 
+        margin-left: auto;
+        margin-right: auto;
+        top: 20px;
+    }
+
+    .card {
+        width: 100%; 
+        margin-bottom: 20px;
+    }
+
+    .benefits-section {
+        top: 20px;    
+    }
+
+    .carousel-section {
+        top: 20px;
+        padding: 20px; 
+    }
+
+    .story-section {
+        padding: 0px; 
+        width: 100%; 
+        height: auto;
+        top: 10px;
+    }
+
+    .story-text, .story-image {
+        width: 100%; 
+        padding: 10px; 
+    }
+
+    .story-image img {
+        width: 100%; 
+        height: auto; 
+    }
+
+}
+
+
