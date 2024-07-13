@@ -8,13 +8,13 @@
 }
 
 #encabezado, #pide-de-pagina {
-  font-family: nyt-franklin, Arial, Helvetica, sans-serif !important; 
+  font-family: nyt-franklin, Arial, Helvetica, sans-serif; 
 }
 
 
 .tamano_contenido_nav {
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 0 20px;
 }
 
 #encabezado {
@@ -106,6 +106,7 @@ button .icono .tamano #carritoCom {
   background-color: #c20000;
   border: none;
 }
+
 .enlace-menu {
   text-decoration: none;
   color: #000;
@@ -146,7 +147,7 @@ button .icono .tamano #carritoCom {
   #icono-usuario {
     display: none;
   }
-  #registrarseNav {
+  #registrarseNav, #ingresarNav {
     display: inline-block;
     background-color: #ffffff; /* Fondo blanco */
     color: #000000; /* Texto negro */
@@ -159,45 +160,27 @@ button .icono .tamano #carritoCom {
     transition: background-color 0.3s, color 0.3s, box-shadow 0.3s; /* Transiciones suaves */
     outline: none; /* Quita el borde de enfoque */
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); /* Sombra ligera */
+    margin-left: 3px;
   }
 
   /* Efectos al pasar el cursor sobre el botón */
-  #registrarseNav:hover {
+  #registrarseNav:hover, #ingresarNav:hover {
     background-color: #f0f0f0; /* Fondo ligeramente gris al pasar el cursor */
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
   }
 
   /* Efectos al hacer clic en el botón */
-  #registrarseNav:active {
+  #registrarseNav:active, #ingresarNav:active {
     background-color: #e0e0e0; /* Fondo más oscuro al hacer clic */
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2); /* Sombra ligera */
   }
 
   /* Estilos para mantener el borde de enfoque sin afectar la apariencia */
-  #registrarseNav:focus-visible {
+  #registrarseNav:focus-visible, #ingresarNav:focus-visible {
     outline: 2px solid #000000;
     outline-offset: 2px;
   }
 
-  #ingresarNav {
-    display: inline-block;
-    background-color: white;
-    color: black;
-    border: 1px solid black;
-    border-radius: 50px;
-    font-weight: 500;
-    padding: 5px 10px;
-    cursor: pointer;
-    font-size: 13px;
-    margin: 5px;
-    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s; /* Transiciones suaves */
-    outline: none; /* Quita el borde de enfoque */
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); /* Sombra ligera */
-  }
-  #ingresarNav:hover {
-    background-color: black;
-    color: white;
-  }
 }
 
 /* footer*/

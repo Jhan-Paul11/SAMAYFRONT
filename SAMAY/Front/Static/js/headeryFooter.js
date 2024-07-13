@@ -14,7 +14,7 @@ header.innerHTML = `
                     <a href="../html/Pinicio.html" id="logo1">SAMAY</a>
                 </div>
                 <div id="acciones-usuario">
-                    <button id="icono-carrito" class="iconohf"><i class="fa-solid fa-cart-shopping fa-lg  tamano" id="carritoCom" style="color: #030303;"></i></i></button>
+                    <button id="icono-carrito" class="iconohf"><i class="fa-solid fa-cart-shopping fa-lg  tamano" id="carritoCom" style="color: #030303;"></i></button>
                     <button id="icono-usuario" class="iconohf"><i class="fa-solid fa-user fa-lg" style="color: #030303;"></i></button>
                     <button id="registrarseNav">Registrarse</button>
                     <button id="ingresarNav">Ingresar</button>
@@ -61,7 +61,7 @@ footer.innerHTML = `
                             <h2>Compra</h2>
                             <ul>
                                 <li><a href="../html/Pproductos.html">Productos</a></li>
-                                <li><a href="../html/Pcompraform.html">Formulario de Pago</a></li>
+                                <li><a href="../html/Pcompra.html">Formulario de Pago</a></li>
                                 <li><a href="../html/contacto.html" id="diferente">Danos tu opinión</a></li>
                             </ul>
                         </div>

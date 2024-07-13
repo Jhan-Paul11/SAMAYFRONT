@@ -9,7 +9,7 @@ body {
   background-image: url('../../Images/campo_producto.jpg');
   background-size: cover;
   background-position: center;
-  height: 200px;
+  height: 400px;
   text-align: center;
   color: white;
   padding: 100px 0;
@@ -115,7 +115,7 @@ body {
   margin-bottom: 10px;
 }
 
-button {
+.btn-carrito {
   background-color: #74a563;
   color: white;
   padding: 10px 20px;
@@ -125,7 +125,7 @@ button {
   height: 50px;
 }
 
-button:hover {
+.btn-carrito:hover {
   background-color: #84bb72;
 }
 
