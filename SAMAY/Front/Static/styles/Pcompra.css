@@ -26,9 +26,10 @@ body {
     box-sizing: border-box; 
 }
 
-h2 {
+.container h2 {
     color: #2E473B; 
     font-family: "Volkhov", Helvetica, Arial, sans-serif;
+    margin-bottom: 30px;
 }
 
 .divider {
