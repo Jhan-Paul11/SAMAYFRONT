@@ -7,14 +7,13 @@
   box-sizing: border-box;
 }
 
-#encabezado, #pide-de-pagina {
-  font-family: nyt-franklin, Arial, Helvetica, sans-serif; 
+body {
+  font-family: nyt-franklin, Arial, Helvetica, sans-serif;
 }
-
 
 .tamano_contenido_nav {
   max-width: 1200px;
-  margin: 0 20px;
+  margin: 0 auto;
 }
 
 #encabezado {
@@ -28,7 +27,7 @@
   align-items: center;
   padding: 10px 20px;
 }
-.iconohf {
+.icono {
   background: none;
   border: none;
   cursor: pointer;
@@ -48,7 +47,7 @@
   background: none;
   border: none;
   cursor: pointer;
-  /*margin: 0 10px;*/
+  margin: 0 10px;
 }
 
 .logo a {
@@ -89,9 +88,13 @@
 }
 #registrarseNav {
   display: none;
+  text-decoration: none;
+  color: #000;
 }
 #ingresarNav {
   display: none;
+  text-decoration: none;
+  color: #000;
 }
 
 #menu {
@@ -106,7 +109,6 @@ button .icono .tamano #carritoCom {
   background-color: #c20000;
   border: none;
 }
-
 .enlace-menu {
   text-decoration: none;
   color: #000;
@@ -142,12 +144,24 @@ button .icono .tamano #carritoCom {
   #menu li {
     margin: 5px 0;
   }
+  #registrarseNav a,
+  #ingresarNav a {
+    text-decoration: none;
+    color: #000;
+  }
 }
 @media (min-width: 1200px) {
   #icono-usuario {
     display: none;
   }
-  #registrarseNav, #ingresarNav {
+
+  #registrarseNav a,
+  #ingresarNav a {
+    text-decoration: none;
+    color: #000;
+  }
+
+  #registrarseNav {
     display: inline-block;
     background-color: #ffffff; /* Fondo blanco */
     color: #000000; /* Texto negro */
@@ -160,27 +174,45 @@ button .icono .tamano #carritoCom {
     transition: background-color 0.3s, color 0.3s, box-shadow 0.3s; /* Transiciones suaves */
     outline: none; /* Quita el borde de enfoque */
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); /* Sombra ligera */
-    margin-left: 3px;
   }
 
   /* Efectos al pasar el cursor sobre el botón */
-  #registrarseNav:hover, #ingresarNav:hover {
+  #registrarseNav:hover {
     background-color: #f0f0f0; /* Fondo ligeramente gris al pasar el cursor */
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
   }
 
   /* Efectos al hacer clic en el botón */
-  #registrarseNav:active, #ingresarNav:active {
+  #registrarseNav:active {
     background-color: #e0e0e0; /* Fondo más oscuro al hacer clic */
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2); /* Sombra ligera */
   }
 
   /* Estilos para mantener el borde de enfoque sin afectar la apariencia */
-  #registrarseNav:focus-visible, #ingresarNav:focus-visible {
+  #registrarseNav:focus-visible {
     outline: 2px solid #000000;
     outline-offset: 2px;
   }
 
+  #ingresarNav {
+    display: inline-block;
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    border-radius: 50px;
+    font-weight: 500;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 13px;
+    margin: 5px;
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s; /* Transiciones suaves */
+    outline: none; /* Quita el borde de enfoque */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); /* Sombra ligera */
+  }
+  #ingresarNav:hover {
+    background-color: black;
+    color: white;
+  }
 }
 
 /* footer*/
@@ -279,6 +311,25 @@ button .icono .tamano #carritoCom {
 
 #legal a:hover {
   text-decoration: underline;
+}
+.arriba_boton {
+  font-size: 20px;
+}
+#scrollBoton {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99;
+  background-color: #ffff;
+  color: white;
+  border: none;
+  outline: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 @media (max-width: 1200px) {
