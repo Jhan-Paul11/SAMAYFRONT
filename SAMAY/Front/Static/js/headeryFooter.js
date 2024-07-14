@@ -94,7 +94,7 @@ footer.innerHTML = `
        </div>
     </div>
 `;
-document.addEventListener('DOMContentLoaded', function() {
+/*document.addEventListener('DOMContentLoaded', function() {
     // Obtener el modal y los elementos del DOM
     const modal = document.getElementById('carrito-modal');
     const span = document.getElementsByClassName('close')[0];
@@ -143,6 +143,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Código existente para agregar productos al carrito
     // ...
   });
-  
+  */
 
  
