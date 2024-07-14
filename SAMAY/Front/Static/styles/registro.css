@@ -69,6 +69,7 @@ button {
     color: white;
     border: none;
     cursor: pointer;
+    font-family: 'Poppins', Helvetica, Arial, sans-serif;
 }
 
 button:hover {
@@ -96,6 +97,26 @@ button:hover {
 
 .google-login:hover {
     background-color: #c23321;
+}
+
+.input-group .toggle-password {
+    width: 7%;
+    position: relative;
+    top:-32px;
+    right: -370px;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    color: black;
+    padding: 0px;
+}
+
+.cont{
+    margin:0px;
+} 
+
+#boton_SignUp{
+    margin-top: 20px;
 }
 
 /* Responsivo */
