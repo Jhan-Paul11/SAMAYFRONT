@@ -1,57 +1,43 @@
-const apiUrl = 'http://localhost:8080/api/carrito';
+document.addEventListener('DOMContentLoaded', () => {
+    const cartButton = document.getElementById('cart-button');
+    const cartModal = document.getElementById('cart-modal');
+    const closeButton = document.querySelector('.close');
+    const addToCartButtons = document.querySelectorAll('.add-to-cart');
+    const cartItems = document.getElementById('cart-items');
+    let cartCount = 0;
+    const cart = [];
 
-async function agregarProducto() {
-    const nombre = document.getElementById('nombre').value;
-    const precio = parseFloat(document.getElementById('precio').value);
-    const cantidad = parseInt(document.getElementById('cantidad').value);
-
-    const producto = {
-        nombre: nombre,
-        precio: precio,
-        cantidad: cantidad
-    };
-
-    await fetch(`${apiUrl}/agregar`, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(producto)
+    cartButton.addEventListener('click', () => {
+        cartModal.style.display = cartModal.style.display === 'block' ? 'none' : 'block';
     });
 
-    actualizarCarrito();
-}
-
-async function eliminarProducto(nombre) {
-    await fetch(`${apiUrl}/eliminar/${nombre}`, {
-        method: 'DELETE'
+    closeButton.addEventListener('click', () => {
+        cartModal.style.display = 'none';
     });
 
-    actualizarCarrito();
-}
-
-async function actualizarCarrito() {
-    const response = await fetch(`${apiUrl}/productos`);
-    const productos = await response.json();
-
-    const productosList = document.getElementById('productos-list');
-    productosList.innerHTML = '';
-
-    productos.forEach(producto => {
-        const li = document.createElement('li');
-        li.textContent = `${producto.nombre} - Precio: $${producto.precio} - Cantidad: ${producto.cantidad} `;
-        
-        const eliminarButton = document.createElement('button');
-        eliminarButton.textContent = 'Eliminar';
-        eliminarButton.onclick = () => eliminarProducto(producto.nombre);
-        li.appendChild(eliminarButton);
-
-        productosList.appendChild(li);
+    window.addEventListener('click', (event) => {
+        if (event.target === cartModal) {
+            cartModal.style.display = 'none';
+        }
     });
 
-    const totalResponse = await fetch(`${apiUrl}/total`);
-    const total = await totalResponse.text();
-    document.getElementById('total').textContent = total;
-}
+    addToCartButtons.forEach(button => {
+        button.addEventListener('click', (event) => {
+            const product = event.target.parentElement;
+            const productName = product.querySelector('h3').textContent;
+            cart.push(productName);
+            updateCart();
+        });
+    });
 
-document.addEventListener('DOMContentLoaded', actualizarCarrito);
+    function updateCart() {
+        cartItems.innerHTML = '';
+        cart.forEach(item => {
+            const li = document.createElement('li');
+            li.textContent = item;
+            cartItems.appendChild(li);
+        });
+        cartCount = cart.length;
+        cartButton.textContent = `Carrito (${cartCount})`;
+    }
+});

@@ -4,6 +4,7 @@ const footer = document.querySelector('footer');
 header.innerHTML = `
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="../styles/carrito.css" />
    <div id="encabezado">
         <div class="tamano_contenido_nav">
             <div id="barra-busqueda">
@@ -15,6 +16,15 @@ header.innerHTML = `
                     <a href="../html/Pinicio.html" id="logo1">SAMAY</a>
                 </div>
                 <div id="acciones-usuario">
+                
+                <div id="carrito-modal" class="modal"  data-aos="fade-left">
+                        <div class="modal-content">
+                        <span class="close">&times;</span>
+                        
+                        <div id="carrito-items"></div>
+                    </div>
+                </div>
+                
                     <button id="icono-carrito" class="icono"><i class="fa-solid fa-cart-shopping fa-lg  tamano" id="carritoCom" style="color: #030303;"></i></i></button>
                     <button id="icono-usuario" class="icono"><i class="fa-solid fa-user fa-lg" style="color: #030303;"></i></button>
                     <a id="registrarseNav" href="../html/registro.html" target="_blank" class="button-link">Registrarse</a>
@@ -35,6 +45,7 @@ header.innerHTML = `
             </nav>
         </div>
     </div>
+    
 `;
 
 footer.innerHTML = `
@@ -83,28 +94,55 @@ footer.innerHTML = `
        </div>
     </div>
 `;
-document.addEventListener('DOMContentLoaded', () => {
-  const burgerMenu = document.getElementById('menuHamburger');
-  const list = document.getElementById('menuList');
-  const menuItems = document.querySelectorAll('.menuItem');
-  const cerrarButton = document.getElementById('cerrarButton');
-
-  function toggleMenu() {
-    list.classList.toggle('show');
-    list.classList.toggle('close');
-  }
-
-  burgerMenu.addEventListener('click', toggleMenu);
-
-  menuItems.forEach((item) => {
-    item.addEventListener('click', function () {
-      list.classList.add('close');
-      list.classList.remove('show');
-    });
+document.addEventListener('DOMContentLoaded', function() {
+    // Obtener el modal y los elementos del DOM
+    const modal = document.getElementById('carrito-modal');
+    const span = document.getElementsByClassName('close')[0];
+    const carritoIcono = document.getElementById('icono-carrito');
+    const carritoItems = document.getElementById('carrito-items');
+  
+    // Mostrar el modal al hacer clic en el icono del carrito
+    carritoIcono.onclick = function() {
+      mostrarCarrito();
+      modal.style.display = 'block';
+    };
+  
+    // Cerrar el modal al hacer clic en el botón de cerrar
+    span.onclick = function() {
+      modal.style.display = 'none';
+    };
+  
+    // Cerrar el modal al hacer clic fuera del contenido del modal
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = 'none';
+      }
+    };
+  
+    // Mostrar los productos en el carrito
+    function mostrarCarrito() {
+      const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+      carritoItems.innerHTML = '';
+  
+      if (carrito.length === 0) {
+        carritoItems.innerHTML = '<p>El carrito está vacío.</p>';
+        return;
+      }
+  
+      carrito.forEach(producto => {
+        const item = document.createElement('div');
+        item.innerHTML = `
+          <p><strong>${producto.nombre}</strong></p>
+          <p>Precio: $${producto.precioporlibra}</p>
+          <p>Cantidad: ${producto.cantidad}</p>
+        `;
+        carritoItems.appendChild(item);
+      });
+    }
+  
+    // Código existente para agregar productos al carrito
+    // ...
   });
+  
 
-  cerrarButton.addEventListener('click', function () {
-    list.classList.add('close');
-    list.classList.remove('show');
-  });
-});
+ 
