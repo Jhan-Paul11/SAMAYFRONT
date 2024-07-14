@@ -1,39 +1,42 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 20px;
+/* Estilos para el modal del carrito */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 70%;
+  top: 0;
+  width: 30%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  transition-timing-function: cubic-bezier(0.2, 0.4, 0.7, 0.8);
 }
 
-h1 {
-  color: #333;
+
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 600px;
 }
 
-label {
-  display: inline-block;
-  width: 100px;
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
 }
 
-input {
-  margin-bottom: 10px;
-  padding: 5px;
-}
-
-button {
-  padding: 5px 10px;
-  background-color: #28a745;
-  color: white;
-  border: none;
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
   cursor: pointer;
 }
 
-button:hover {
-  background-color: #218838;
-}
 
-ul {
-  list-style-type: none;
-  padding: 0;
-}
 
-li {
-  margin-bottom: 10px;
-}
+
