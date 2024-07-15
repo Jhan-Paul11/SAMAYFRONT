@@ -24,11 +24,15 @@ header.innerHTML = `
                         <div id="carrito-items"></div>
                     </div>
                 </div>
-                
-                    <button id="icono-carrito" class="icono"><i class="fa-solid fa-cart-shopping fa-lg  tamano" id="carritoCom" style="color: #030303;"></i></i></button>
-                    <button id="icono-usuario" class="icono"><i class="fa-solid fa-user fa-lg" style="color: #030303;"></i></button>
+                    <a href="../html/Pcompra.html" id="icono-carrito" class="icono">
+                        <i class="fa-solid fa-cart-shopping fa-lg tamano" id="carritoCom" style="color: #030303;"></i>
+                    </a>
+                    <a href="../html/login.html" id="icono-usuario" class="icono">
+                        <i class="fa-solid fa-user fa-lg" style="color: #030303;"></i>
+                    </a>
+                    
                     <a id="registrarseNav" href="../html/registro.html" target="_blank" class="button-link">Registrarse</a>
-                    <a id="ingresarNav" href="../html/registro.html" target="_blank" class="button-link">Ingresar</a>
+                    <a id="ingresarNav" href="../html/login.html" target="_blank" class="button-link">Ingresar</a>
                 </div>
             </div>
             <div id="campo-busqueda-container">
@@ -94,7 +98,7 @@ footer.innerHTML = `
        </div>
     </div>
 `;
-/*document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() {
     // Obtener el modal y los elementos del DOM
     const modal = document.getElementById('carrito-modal');
     const span = document.getElementsByClassName('close')[0];
@@ -143,6 +147,49 @@ footer.innerHTML = `
     // Código existente para agregar productos al carrito
     // ...
   });
-  */
+
+  async function agregarProductoAlCarrito(carritoId, productoId) {
+    try {
+        const response = await fetch(`http://127.0.0.1:8080/api/carrito/${carritoId}/productos/${productoId}`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+        const data = await response.json();
+        console.log('Producto agregado:', data);
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}
+async function eliminarProductoDelCarrito(carritoId, productoId) {
+    try {
+        const response = await fetch(`http://127.0.0.1:8080/api/carrito/${carritoId}/productos/${productoId}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+        const data = await response.json();
+        console.log('Producto eliminado:', data);
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}
+async function actualizarCarrito(carritoId, productosIds) {
+    try {
+        const response = await fetch(`http://127.0.0.1:8080/api/carrito/${carritoId}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(productosIds)
+        });
+        const data = await response.json();
+        console.log('Carrito actualizado:', data);
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}
 
  

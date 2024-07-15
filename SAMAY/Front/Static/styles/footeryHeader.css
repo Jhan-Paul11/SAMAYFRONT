@@ -315,6 +315,7 @@ button .icono .tamano #carritoCom {
 .arriba_boton {
   font-size: 20px;
 }
+
 #scrollBoton {
   display: none;
   position: fixed;
@@ -322,7 +323,7 @@ button .icono .tamano #carritoCom {
   right: 20px;
   z-index: 99;
   background-color: #ffff;
-  color: white;
+  color:#74A563;
   border: none;
   outline: none;
   width: 50px;
