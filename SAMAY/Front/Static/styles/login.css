@@ -76,6 +76,7 @@ button {
     color: white;
     border: none;
     cursor: pointer;
+    font-family: 'Poppins', Helvetica, Arial, sans-serif;
 }
 
 button:hover {
@@ -103,6 +104,18 @@ button:hover {
 
 .google-login:hover {
     background-color: #c23321;
+}
+
+.input-group .toggle-password {
+    width: 10%;
+    position: relative;
+    top:-34px;
+    right: -320px;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    color: black;
+    padding: 0px;
 }
 
 /* Responsivo */

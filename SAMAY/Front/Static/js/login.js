@@ -1,43 +1,68 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const loginForm = document.getElementById("loginForm");
-    const errorMessage = document.getElementById("errorMessage");
 
- 
-    const preStoredUser = {
-        email:"tester@gmail.com",
-        password: btoa("password123") 
-    };
+document.getElementById('boton_SignUp').addEventListener('click', (event) => {
+    event.preventDefault();
 
-    
-    if (!localStorage.getItem("user")) {
-        localStorage.setItem("user", JSON.stringify(preStoredUser));
+    let usuarios;
+
+    const email = document.getElementById('email').value.trim();
+    const password = document.getElementById('password').value.trim();
+
+    if (!email || !password) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Por favor, complete todos los campos.'
+        });
+        return;
     }
 
-    loginForm.addEventListener("submit", function(event) {
-        event.preventDefault();
+    const usuariosGuardados = JSON.parse(localStorage.getItem("usuarios"));
 
-        
-        const password = document.getElementById("password").value.trim();
-        const email = document.getElementById("email").value.trim();
+    if (!usuariosGuardados || usuariosGuardados.length === 0) {
+        usuarios = [
+            { correoi: "samay@gmail.com", contrasenai: "grupo6" }
+        ];
+    } else {
+        usuarios = usuariosGuardados;
+    }
 
-        if ( !password || !email) {
-            errorMessage.textContent = "Por favor, complete todos los campos.";
-            errorMessage.style.color = "#74A563";
-            return;
-        }
+    const usuario = usuarios.find(usuario => usuario.correoi === email);
 
-        
-        const storedUser = JSON.parse(localStorage.getItem("user"));
+    if (!usuario) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Correo electrónico no registrado.'
+        });
+        return;
+    }
 
-      
-        if ((password) === atob(storedUser.password) && email === atob(storedUser.email)) { //atob es una funcion de js que codifica la informacion
-            errorMessage.textContent = "Inicio de sesión exitoso!";
-            errorMessage.style.color = "#2E473B";
-        } else {
-            errorMessage.textContent = "Nombre de usuario o contraseña inválidos.";
-            errorMessage.style.color = "#2E473B";
-        }
+    if (usuario.contrasenai !== password) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Contraseña incorrecta.'
+        });
+        return;
+    }
 
-        
+    Swal.fire({
+        icon: 'success',
+        title: '¡Éxito!',
+        text: 'Inicio de sesión exitoso'
     });
 });
+
+function toggleContraseña(campopas) {
+    const campoContraseña = document.getElementById(campopas);
+    const icon = campoContraseña.nextElementSibling.querySelector('i');
+    if (campoContraseña.type === "password") {
+        campoContraseña.type = "text";
+        icon.classList.remove("fa-eye");
+        icon.classList.add("fa-eye-slash");
+    } else {
+        campoContraseña.type = "password";
+        icon.classList.remove("fa-eye-slash");
+        icon.classList.add("fa-eye");
+    }
+}

@@ -1,70 +1,71 @@
-// const usuarios=[
-//  {   email:"samay@gail.com",
-//     password:"somosGrupo6"
-//  }
-//  ,
+let usuarios = [
+    {
+        correoi: "samay@gmail.com",
+        contrasenai: "grupo6"
+    }
+];
 
-// ]
-// const usuariosGuardados=JSON.parse(localStorage.getItem('usuarios'))
+const usuariosGuardados = JSON.parse(localStorage.getItem("usuarios"));
 
-document.getElementById('formulario_registro').addEventListener('submit',(event)=>{
+if (usuariosGuardados) {
+    usuarios = usuariosGuardados;
+}
+
+document.getElementById('boton_SignUp').addEventListener('click', (event) => {
     event.preventDefault();
 
-    const correo =document.getElementById('email').value;
-    const constraseña=document.getElementById('password').value;
-    const confirmarPassword = document.getElementById('confirmar_contraseña').value;
+    const correo = document.getElementById('email').value.trim();
+    const contrasena = document.getElementById('password').value.trim();
+    const confirmarPassword = document.getElementById('confirm-password').value.trim();
 
-    //validar que las contraseñas coincidan
-    if (constraseña!==confirmarPassword){
-        // alert('las contraseñas no coinciden')
+    if (contrasena !== confirmarPassword) {
         Swal.fire({
             icon: "error",
-            titulo:"¡ups!",
-            text:"la contraseña no coincide",
-            footer:'<a href:"#" >vuelve a intertarlo</a>',
-            customClass:{   
-                confirmButton:'Swal-confirm'
-            }
-        });
-    }else{
-    // guardo los  datos en mi storage
-    localStorage.setItem('email',correo);
-    localStorage.setItem('password',constraseña);
-    // alert ('datos guardados en local storage');
-    Swal.fire({
-        position: "center",
-        icon: "success",
-        title: "Te has registrado correctamente",
-        showConfirmButton: false,
-        timer: 1500,
-        
-      });
-    document.getElementById('formulario_registro').reset();
+            title: "Oops...",
+            text: "La contraseña no coincide",
+            })
+        return;
     }
 
+    if (!validarCorreo(correo)) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Formato de correo inválido'
+        });
+        return;
+    }
 
+    for (const usuario of usuarios) {
+        if (usuario.correoi === correo) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Este correo ya se encuentra registrado.'
+            });
+            return;
+        }
+    }
 
+    const nuevoUsuario = {
+        correoi: correo,
+        contrasenai: contrasena,
+    };
+
+    usuarios.push(nuevoUsuario);
+    localStorage.setItem("usuarios", JSON.stringify(usuarios));
+    Swal.fire({
+        icon: 'success',
+        title: '¡Éxito!',
+        text: 'Usuario registrado'
+    });
+    return;
 });
 
 function validarCorreo(email) {
-    // Expresión regular para validar el correo electrónico
     const validacionCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return validacionCorreo.test(email);
 }
-
-function cargarDatos(){
-    const correo=localStorage.getItem('email');
-    const constraseña=localStorage.getItem('password');
-
-    if (correo){
-        document.getElementById('email').value=correo;
-    }
-    if(constraseña){
-        document.getElementById('password').value=constraseña;
-    }
-}
-window.onload=cargarDatos;
-
 
 function toggleContraseña(campopas) {
     const campoContraseña = document.getElementById(campopas);

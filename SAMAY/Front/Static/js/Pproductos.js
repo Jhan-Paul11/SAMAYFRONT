@@ -1,14 +1,3 @@
-/*async function obtenerProductos() {
-    try {
-        const response = await fetch('http://localhost:8080/producto/obtener',{'mode':'no-cors'});
-        console.log(response);
-        const productos = await response.json();
-       
-        //actualizarHTMLProductos(productos);
-    } catch (error) {
-        console.error('Error al obtener los productos:', error);
-    }
-}*/
 
 async function obtenerProductos() {
     try {
@@ -16,9 +5,7 @@ async function obtenerProductos() {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
-                // Agrega cualquier encabezado adicional que necesites
             },
-            // No necesitas especificar 'mode' a menos que necesites cambiarlo específicamente
         });
         console.log(response);
         const productos = await response.json();
@@ -49,7 +36,36 @@ function actualizarHTMLProductos(productos) {
         `;
     });
     contenedorProductos.innerHTML = elemento;
+
+    const botonesCarrito = document.querySelectorAll('.btn-carrito');
+        botonesCarrito.forEach(boton => {
+            boton.addEventListener('click', function(event) {
+                const idProducto = parseInt(event.target.getAttribute('data-id'));
+                agregarAlCarrito(idProducto);
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Agregado con éxito',
+                    text: 'El producto se ha agregado al carro de compras correctamente.',
+                });
+            });
+        });
 }
 
 document.addEventListener('DOMContentLoaded', obtenerProductos);
+
+function agregarAlCarrito(idProducto) {
+    const producto = productos.find(prod => prod.id === idProducto);
+    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+    let productoEnCarrito = carrito.find(item => item.id === idProducto);
+    if (productoEnCarrito) {
+        productoEnCarrito.cantidad += 1;
+    } else {
+        producto.cantidad = 1;
+        carrito.push(producto);
+    }
+
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+}
+
  
