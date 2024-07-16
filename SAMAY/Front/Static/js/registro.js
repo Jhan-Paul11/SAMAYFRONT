@@ -59,6 +59,7 @@ document.getElementById('boton_SignUp').addEventListener('click', (event) => {
         title: '¡Éxito!',
         text: 'Usuario registrado'
     });
+    window.location.href="../html/Pinicio.html";
     return;
 });
 

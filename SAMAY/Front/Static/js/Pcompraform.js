@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
       Swal.fire({
         icon: 'success',
         title: 'Enviado con éxito',
-        text: 'El formulario se ha enviado correctamente.',
+        text: 'Un asesor se comunicará con usted para terminar su compra.',
       });
     });
   

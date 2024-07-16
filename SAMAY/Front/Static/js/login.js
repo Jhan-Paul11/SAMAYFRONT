@@ -51,6 +51,7 @@ document.getElementById('boton_SignUp').addEventListener('click', (event) => {
         title: '¡Éxito!',
         text: 'Inicio de sesión exitoso'
     });
+    window.location.href="../html/Pinicio.html";
 });
 
 function toggleContraseña(campopas) {
